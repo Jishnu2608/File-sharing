@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --light: #009bd0;
+  --dark: #00759d;
+  --black: #000000;
+  --white: #ffffff;
+  --whiteSmoke: #fefffe;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "inter", sans-serif, serif;
+  font-size: 24px;
+}
+body {
+  background-color: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* add file field */
+body .container {
+  /* margin: 0 auto; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1em 2em;
+  border-radius: 10px;
+  background: var(--whiteSmoke);
+}
+
+.header .title h1 {
+  color: var(--dark);
+  text-align: center;
+}
+
+.subtitle h2 {
+  color: var(--light);
+  font-size: 0.8rem;
+  margin: 0.212rem 0 0;
+  font-weight: normal;
+}
+
+.header .subtitle {
+  text-align: center;
+}
+.rowBody .addFileField {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.8rem 2.5rem;
+  margin: 1rem 0 0;
+  width: 15rem;
+  height: 11rem;
+  background: #009bd026;
+  border: 1px dashed #00759d;
+  border-radius: 0.625rem;
+}
+
+p {
+  font-size: 0.7rem;
+}
+
+.rowBody .addFileField .dragDrop p {
+  text-align: center;
+  margin: 0.3em 0;
+  color: var(--light);
+}
+.rowBody .addFileField .dragDrop p:last-child {
+  font-weight: 700;
+}
+
+.button button {
+  padding: 0.412rem 0.512rem;
+  color: var(--white);
+  background: var(--dark);
+  border-radius: 10px;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  width: 100%;
+  box-shadow: -3px 21px 13px -9px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+
+  transition: .3s all ease;
+}
+
+.button button:hover { 
+  background: var(--light);
+
+}
+
+.upload.button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: .3s all ease;
+}
+
+
+.upload.button button {
+  background: var(--light);
+  margin: 1em 0;
+  width: 70%;
+}
+
+.upload.button button:hover {
+  background: var(--dark);
+}
+
+
+.showUploads .fileUpload {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+
+  transition: .3s all ease;
+
+}
+
+.showUploads .fileUpload:hover{
+    /* hover */
+    box-shadow: 0px 4px 13px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+}
+
+.showUploads .fileUpload .fileType {
+  width: 2rem;
+  height: 2.1rem;
+  margin: 0 0.5rem 0 0;
+  background: var(--black);
+  border-radius: 10px;
+}
+
+.showUploads .fileUpload .fileProgress {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: space-evenly;
+}
+
+.showUploads .fileUpload .fileBio {
+  display: flex;
+  justify-content: space-between;
+  /* margin: .2rem 0; */
+}
+
+.showUploads .fileUpload .fileBio .fileNameSize {
+  display: flex;
+}
+.showUploads .fileUpload .fileBio .fileNameSize .fileName p,
+.progressPerc p {
+  font-size: 0.6em;
+  margin: 0 0.3em 0.4em 0;
+}
+.progressPerc p {
+  font-size: 0.6em;
+  margin: 0 0.123em 0.4em 0;
+}
+
+.progressBar {
+  /* padding: 2px; */
+  width: 100%;
+  border:2px solid var(--light);
+  height: 0.5em;
+  border-radius: 20px;
+}
+.progressBar .progressIndicator{
+  background: var(--dark);
+  width: 0;
+  height: 100%;
+  border-radius: 20px;
+
+}
+@keyframes progress{
+  0%{
+    width: 0;
+  }
+  63%{
+    width: 63%;
+  }
+  90%{
+    width: 83%;
+  }
+  100%{
+    width: 100%;
+    }
+}
+
+.fileUpload .status {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin: 0 0 0 0.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success{
+    display: none;
+}
+
+/* drop area image size */
+.drag-area img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.drag-area.active{
+  border: 2px solid #fff;
+}
+
+/* link Area */
+.linkView {
+  display: flex;
+  /* box-shadow: 0px 4px 13px 1px rgba(0, 0, 0, 0.25); */
+  border-radius: 10px;
+  position: absolute;
+  width: 15rem;
+  bottom: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  color: var(--light);
+  text-align: center;
+}
+
+
+.drag-area{
+  position: relative;
+}
