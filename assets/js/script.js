@@ -112,7 +112,11 @@ function showFile() {
     let fileType = file.type; // Get the type of the selected file
   
     // Check if the file type is in the list of valid extensions
-    let validExtensions = ["image/jpeg", "image/jpg", "image/png", "application/zip", "application/pdf"];
+    let validExtensions = [
+        "image/jpeg", "image/jpg", "image/png", // Image formats
+        "application/zip", "application/pdf", // Document formats
+        "video/mp4", "video/webm", "video/ogg" // Video formats
+    ];
     
     // Check if the file type is in the list of valid extensions
     if (validExtensions.includes(fileType) || fileName.toLowerCase().endsWith(".zip") || fileName.toLowerCase().endsWith(".pdf")) {
@@ -122,11 +126,12 @@ function showFile() {
       console.log("File name: " + fileName);
     } else {
       // If it's not a supported file type, display an error message
-      alert("Unsupported file type! Please upload an image (JPEG, JPG, PNG), a ZIP file, or a PDF.");
+      alert("Unsupported file type! Please upload an image (JPEG, JPG, PNG), a ZIP file, a PDF, or a video (MP4, WebM, Ogg).");
       dropArea.classList.remove("active");
       dragText.textContent = "Drag & Drop to Upload File";
     }
-  }
+}
+
   
 
 //hide progressBar div
